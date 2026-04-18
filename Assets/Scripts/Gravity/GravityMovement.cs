@@ -31,10 +31,10 @@ namespace GravityZones
         // Input should be in world units per second
         public void AddMovementInput(Vector3 input)
         {
-            _accumulatedInput += input;
+            _accumulatedInput = input;
         }
 
-        private void FixedUpdate()
+        private void Update()
         {
             Vector3 gravity = Vector3.zero;
             if (_gravityEntity != null)
@@ -44,9 +44,8 @@ namespace GravityZones
 
             Vector3 movement = _accumulatedInput;
 
-            _accumulatedInput = Vector3.zero;
 
-            Vector3 delta = (movement + gravity) * Time.fixedDeltaTime;
+            Vector3 delta = (movement + gravity) * Time.deltaTime;
 
             if (_useRigidbodyMovement && _rb != null && !_rb.isKinematic)
             {
