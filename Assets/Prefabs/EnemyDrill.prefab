@@ -396,27 +396,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 3d8860bf144ff7849b55b16821fff239, type: 3}
       propertyPath: m_LocalScale.x
-      value: 7.5
+      value: 12.167251
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3d8860bf144ff7849b55b16821fff239, type: 3}
       propertyPath: m_LocalScale.y
-      value: 7.5264206
+      value: 12.210113
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3d8860bf144ff7849b55b16821fff239, type: 3}
       propertyPath: m_LocalScale.z
-      value: 7.5264206
+      value: 12.210113
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3d8860bf144ff7849b55b16821fff239, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.09
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3d8860bf144ff7849b55b16821fff239, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.87
+      value: -1.66
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3d8860bf144ff7849b55b16821fff239, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.0083704
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3d8860bf144ff7849b55b16821fff239, type: 3}
       propertyPath: m_LocalRotation.w
@@ -479,7 +479,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9f0ff3b35a94ceb915697ab9cd886e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Utility.Spinner
-  _spinSpeed: {x: 0, y: 500, z: 0}
+  _spinSpeed: {x: 0, y: 0, z: 500}
 --- !u!4 &677114477177256644 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3d8860bf144ff7849b55b16821fff239, type: 3}

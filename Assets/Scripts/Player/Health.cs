@@ -9,9 +9,12 @@ namespace Player
         private int _currentHealth;
         public int currentHealth { get => _currentHealth; }
         
-        public delegate void OnHealthChanged(int newHealth);
-        public event OnHealthChanged onHealthChanged;
-        public event OnHealthChanged OnDead;
+        public delegate void OnHealthChangedSignature(int newHealth);
+        public event OnHealthChangedSignature OnHealthChanged;
+        public event OnHealthChangedSignature OnDead;
+        public event OnHealthChangedSignature OnDamaged;
+        public event OnHealthChangedSignature OnHealed;
+        
         
         private void Awake()
         {
@@ -20,8 +23,18 @@ namespace Player
 
         public void TakeDamage(int amount)
         {
+            int oldHealth = _currentHealth;
             _currentHealth = Math.Clamp(_currentHealth - amount, 0, _maxHealth);
-            onHealthChanged?.Invoke(_currentHealth);
+            OnHealthChanged?.Invoke(_currentHealth);
+            
+            if(oldHealth > _currentHealth)
+            {
+                OnDamaged?.Invoke(_currentHealth);
+            }
+            else if (oldHealth < _currentHealth)
+            {
+                OnHealed?.Invoke(_currentHealth);
+            }
             if (_currentHealth <= 0)
             {
                 Die();
