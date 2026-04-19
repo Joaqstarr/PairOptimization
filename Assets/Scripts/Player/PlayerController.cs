@@ -16,12 +16,20 @@ namespace Player
             _controls = GetComponent<PlayerControls>();
             _gravityMovement = GetComponent<GravityMovement>();
             _gravityEntity = GetComponent<GravityEntity>();
+
+            //No longer checks for components everyframe, only on startup. If any are missing, log an error and disable the script.
+            if (_controls == null || _gravityMovement == null || Camera.main == null)
+            {
+                Debug.LogError("Missing required components");
+                enabled = false;
+                return;
+            }
         }
 
         private void Update()
         {
-            if (_controls == null || _gravityMovement == null || Camera.main == null) return;
-            
+            //Moved component checking to Awake() instead of Update()
+
             Vector3 gravityUp = -_gravityEntity.GetCombinedGravity().normalized;
 
 
